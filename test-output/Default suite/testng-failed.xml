@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sprint2Git.StringFormat">
+      <class name="Sprint2Git.StringSwap">
         <methods>
-          <include name="run1"/>
+          <include name="run2"/>
         </methods>
-      </class> <!-- Sprint2Git.StringFormat -->
+      </class> <!-- Sprint2Git.StringSwap -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
