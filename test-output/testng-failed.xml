@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sprint2Git.Customer_order">
+      <class name="Sprint2Git.StringPattern">
         <methods>
           <include name="run"/>
         </methods>
-      </class> <!-- Sprint2Git.Customer_order -->
+      </class> <!-- Sprint2Git.StringPattern -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
