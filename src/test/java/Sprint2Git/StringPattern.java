@@ -22,52 +22,69 @@ public class StringPattern {
 		String s2="ticket";
 		int i1 = 0;
 		int n = 0;
-		Pattern pattern1=Pattern.compile("\\d");
+		int i2=0;
+		Pattern pattern1=Pattern.compile("\\d+{6,}");
 		 
 		 Matcher matcher1=pattern1.matcher(s[i]);
-Pattern pattern2=Pattern.compile("[A-Z0-9]+");
+Pattern pattern2=Pattern.compile("(?=.?[A-Z])(?=.*[0-9])[A-Z0-9]+$");
 		 
 		 Matcher matcher2=pattern2.matcher(s[i]);
 		if(s[i].contains("application")|| s[i].contains("Application"))
 		{
 		 i1=	s[i].indexOf("application");
 		 n=i1+s1.length();
+		 boolean found1=false;
 		 
-		 if(matcher1.find(n)) {
+		 while(matcher1.find(n) ) {
 			// System.out.println(matcher1.start());
-			 //System.out.println(matcher1.end());
-			 System.out.println(s[i].substring(matcher1.start(),matcher1.end()));
-			 appnum_list.add(s[i].substring(matcher1.start(),matcher1.end()));
+			//System.out.println(matcher1.end());
+			 System.out.println(matcher1.group());
+			 break;
+			// String s3=s[i].substring(matcher1.start(),matcher1.end());
+			 //System.out.println(s3);
+			// appnum_list.add(s3);
 		 }
-		 if(matcher2.find(n)) {
+		 while(matcher2.find(n) ) {
 			 //System.out.println(matcher2.start());
 			 //System.out.println(matcher2.end());
-			System.out.println(s[i].substring(matcher2.start(),matcher2.end()));
-			 appnum_list.add(s[i].substring(matcher2.start(),matcher1.end()));
+			 System.out.println(matcher2.group());
+			 break;
+			// String s3=s[i].substring(matcher1.start(),matcher1.end());
+			//System.out.println(s3);
+			 //appnum_list.add(s3);
 		 }
 		}
 		if(s[i].contains("ticket"))
 		{
-		 i1=	s[i].indexOf("ticket");
-		 n=i1+s2.length();
+		 i2=	s[i].indexOf("ticket");
+		 n=i2+s2.length();
+		 boolean found2=false;
+		 
 		 if(matcher1.find(n)) {
 			// System.out.println(matcher1.start());
 			 //System.out.println(matcher1.end());
-			 System.out.println(s[i].substring(matcher1.start(),matcher1.end()));
-			 hallnum_list.add(s[i].substring(matcher1.start(),matcher1.end()));
+			 System.out.println(matcher1.group());
+			 //String s3=s[i].substring(matcher1.start(),matcher1.end());
+			 //System.out.println(s3);
+			 //hallnum_list.add(s3);
 		 }
 		 
 		 if(matcher2.find(n)) {
 			 //System.out.println(matcher2.start());
 			 //System.out.println(matcher2.end());
-			 System.out.println(s[i].substring(matcher2.start(),matcher2.end()));
-			 hallnum_list.add(s[i].substring(matcher2.start(),matcher2.end()));
+			 System.out.println(matcher2.group());
+			// String s3=s[i].substring(matcher1.start(),matcher1.end());
+			 //System.out.println(s3);
+			
+			// System.out.println(s[i].substring(matcher2.start(),matcher2.end()));
+			 //hallnum_list.add(s3);
 		 }
 		}
-		hmap.put(appnum_list, hallnum_list);
+		//hmap.put(appnum_list, hallnum_list);
 		//System.out.println(i1);
 		//System.out.println(n);
 		}
+		 //System.out.println(hmap);
 		 return hmap;
 	}
 	
